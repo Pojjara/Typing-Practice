@@ -1,0 +1,32 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono">
+    <link rel="stylesheet" href="{% static 'TypingPractice/styles.css' %}">
+    
+    <script>
+        
+    </script>
+    <script src="{% static 'TypingPractice/script.js' %}"></script>
+</head>
+<body>
+    <div class="main">
+        <label for="vol">Min word length:</label>
+        <input class="min" type="range" id="vol" name="vol" min="0" max="10" value="10">
+        <label for="vol">Max word length:</label>
+        <input class="max" type="range" id="vol" name="vol" min="0" max="20" value="20">
+        <h2 class="mistakes"></h2>
+
+
+        <div class="text">
+        
+        </div>
+    </div>
+    
+    
+</body>
+</html>
