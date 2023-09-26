@@ -58,22 +58,23 @@ document.addEventListener('DOMContentLoaded', function(){
 
         if(!nextChar){
                 
-                fetchNewWords()
-                    .then(data => {
-                    // Handle the fetched data here
-                    let words = data['words']
-                    console.log(words)
-                    displayWords(words)
+            fetchNewWords()
+                .then(data => {
+                // Handle the fetched data here
+                let words = data['words']
+                console.log(words)
+                displayWords(words)
+                
+                rawText = ''
+                words.forEach(word => {
+                    rawText += word + ' '
+                });
+        
+                text = ''
+                words.forEach(word => {
+                    text += word + "_"
+                });
                     
-                    rawText = ''
-                    words.forEach(word => {
-                        rawText += word + ' '
-                    });
-            
-                    text = ''
-                    words.forEach(word => {
-                        text += word + "_"
-            });
             text = text.slice(0, -1)
             allChars = document.querySelectorAll('.characterSpan')
             allChars[0].classList.add('current')
@@ -98,7 +99,10 @@ document.addEventListener('DOMContentLoaded', function(){
             currentChar.classList.add('correct')
             currentIndex++
             currentChar = allChars[currentIndex]
-            currentChar.classList.add('current')
+            if(currentChar){
+                currentChar.classList.add('current')
+            }
+            
 
             
 
@@ -158,10 +162,41 @@ document.addEventListener('DOMContentLoaded', function(){
         });
     }
 
+    let lengthRange = document.querySelectorAll('.lengthRange')
 
+    lengthRange.forEach(element =>{
+        
+        element.addEventListener('change',function(){
+            console.log(element.value)
+            fetchNewWords()
+                    .then(data => {
+                    // Handle the fetched data here
+                    let words = data['words']
+                    console.log(words)
+                    displayWords(words)
+                    
+                    rawText = ''
+                    words.forEach(word => {
+                        rawText += word + ' '
+                    });
+            
+                    text = ''
+                    words.forEach(word => {
+                        text += word + "_"
+                    });
+                    
+            text = text.slice(0, -1)
+            allChars = document.querySelectorAll('.characterSpan')
+            allChars[0].classList.add('current')
+            currentIndex = 0
+            mistakes = 0
+            mistakesP = document.querySelector('.mistakes')
+            mistakesP.innerHTML = 'Mistakes: ' + mistakes
+            })
+        })
+    })
 
-
-
+    
 })
 
 

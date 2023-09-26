@@ -7,23 +7,232 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono">
     <link rel="stylesheet" href="{% static 'TypingPractice/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'TypingPractice/keyboardstyles.css' %}">
     
-    <script>
-        
-    </script>
+    <script src="{% static 'TypingPractice/keyboardscript.js' %}"></script>
     <script src="{% static 'TypingPractice/script.js' %}"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
 </head>
 <body>
     <div class="main">
         <label for="vol">Min word length:</label>
-        <input class="min" type="range" id="vol" name="vol" min="0" max="10" value="10">
+        <input class="lengthRange min" type="range" id="vol" name="vol" min="3" max="10" value="3">
         <label for="vol">Max word length:</label>
-        <input class="max" type="range" id="vol" name="vol" min="0" max="20" value="20">
+        <input class="lengthRange max" type="range" id="vol" name="vol" min="5" max="20" value="5">
         <h2 class="mistakes"></h2>
 
 
         <div class="text">
         
+        </div>
+
+    </div>
+
+    <div class="keyboard">
+        <div class="row">
+          <div class="key key__esc Escape">
+            <i data-feather="x"></i>
+          </div>
+          <div class="key key__symbols Digit1">
+            ! <span> 1
+          </div>
+          <div class="key key__symbols Digit2">
+            @ <span> 2
+          </div>
+          <div class="key key__symbols Digit3">
+            # <span> 3
+          </div>
+          <div class="key key__symbols Digit4">
+            $ <span> 4
+          </div>
+          <div class="key key__symbols Digit5">
+            % <span> 5
+          </div>
+          <div class="key key__symbols Digit6">
+            ^ <span> 6
+          </div>
+          <div class="key key__symbols Digit7">
+            & <span> 7
+          </div>
+          <div class="key key__symbols Digit8">
+            * <span> 8
+          </div>
+          <div class="key key__symbols Digit9">
+            ( <span> 9
+          </div>
+          <div class="key key__symbols Digit0">
+            ) <span> 0
+          </div>
+          <div class="key key__symbols Minus">
+            _ <span> -
+          </div>
+          <div class="key key__symbols Equal">
+            + <span> =
+          </div>
+          <div class="key key__delete key__icon Backspace">
+            <i data-feather="delete"></i>
+          </div>
+        </div>
+            
+        <div class="row">
+          <div class="key key__oneandhalf Tab">
+            <i data-feather="log-in"></i>
+          </div>
+          <div class="key KeyQ">
+            Q
+          </div>
+          <div class="key KeyW">
+            W
+          </div>
+          <div class="key KeyE">
+            E
+          </div>
+          <div class="key KeyR">
+            R
+          </div>
+          <div class="key KeyT">
+            T
+          </div>
+          <div class="key KeyY">
+            Y
+          </div>
+          <div class="key KeyU">
+            U
+          </div>
+          <div class="key KeyI">
+            I
+          </div>
+          <div class="key KeyO">
+            O
+          </div>
+          <div class="key KeyP">
+            P
+          </div>
+          <div class="key key__symbols BracketLeft">
+            { <span> [
+          </div>
+          <div class="key key__symbols BracketRight">
+            } <span> ]
+          </div>
+          <div class="key key__symbols key__oneandhalf IntlBackslash">
+            | <span> \
+          </div>
+        </div>
+            
+        <div class="row">
+          <div class="key key__caps CapsLock">
+            <i data-feather="meh"></i>
+          </div>
+          <div class="key KeyA">
+            A
+          </div>
+          <div class="key KeyS">
+            S
+          </div>
+          <div class="key KeyD">
+            D
+          </div>
+          <div class="key KeyF">
+            F
+          </div>
+          <div class="key KeyG">
+            G
+          </div>
+          <div class="key KeyH">
+            H
+          </div>
+          <div class="key KeyJ">
+            J
+          </div>
+          <div class="key KeyK">
+            K
+          </div>
+          <div class="key KeyL">
+            L
+          </div>
+          <div class="key key__symbols Semicolon">
+            : <span> ;
+          </div>
+          <div class="key key__symbols Quote">
+            " <span> '
+          </div>
+          <div class="key key__enter Enter">
+            <i data-feather="corner-down-left"></i>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="key key__shift-left ShiftLeft">
+            <i data-feather="arrow-up-circle"></i>
+          </div>
+          <div class="key KeyZ">
+            Z
+          </div>
+          <div class="key KeyX">
+            X
+          </div>
+          <div class="key KeyC">
+            C
+          </div>
+          <div class="key KeyV">
+            V
+          </div>
+          <div class="key KeyB">
+            B
+          </div>
+          <div class="key KeyN">
+            N
+          </div>
+          <div class="key KeyM">
+            M
+          </div>
+          <div class="key key__symbols Comma">
+            > <span> .
+          </div>
+          <div class="key key__symbols Period">
+            < <span> .
+          </div>
+          <div class="key key__symbols Slash">
+            ? <span> /
+          </div>
+          <div class="key ShiftRight">
+            <i data-feather="arrow-up-circle"></i>
+          </div>
+          <div class="key key__arrow ArrowUp">
+            <i data-feather="arrow-up"></i>
+          </div>
+          <div class="key Delete">
+            <i data-feather="trash-2"></i>
+          </div>
+        </div>
+            
+        <div class="row">
+          <div class="key key__bottom-funct ControlLeft">
+            ctrl
+          </div>
+          <div class="key key__bottom-funct MetaLeft">
+            WIN
+          </div>
+          <div class="key key__bottom-funct AltLeft">
+            ALT
+          </div>
+          <div class="key key__spacebar Space">
+          </div>
+          <div class="key AltRight">
+            alt gr
+          </div>
+          <div class="key ContextMenu">
+            <i data-feather="activity"></i>
+          </div>
+          <div class="key key__arrow ArrowLeft">
+            <i data-feather="arrow-left"></i>
+          </div>
+          <div class="key key__arrow ArrowDown">
+            <i data-feather="arrow-down"></i>
+          </div>
+          <div class="key key__arrow ArrowRight">
+            <i data-feather="arrow-right"></i>
+          </div>
         </div>
     </div>
     
