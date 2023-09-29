@@ -8,7 +8,7 @@ import random
 import os
 
 
-amountOfWords = 5
+amountOfWords = 10
 
 def index(request):
     
@@ -30,7 +30,7 @@ def fetchWords(request,min,max):
             lines = f.readlines()
             word = random.choice(lines).strip()
             if len(word) > min and len(word) < max and word not in listOfWords and ' ' not in word:
-
+                print(f"Randomly chosen file: {random_file}, Randomly Choosen word: {word}")
                 listOfWords.append(word)
                 i += 1
         
@@ -49,7 +49,6 @@ def chooseRandomFile():
     if file_list:
         # Choose a random file from the list
         random_file = random.choice(file_list)
-        print(f"Randomly chosen file: {random_file}")
         return random_file
     else:
         print("No files found in the directory.")
